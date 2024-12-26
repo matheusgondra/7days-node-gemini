@@ -8,7 +8,7 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"moduleResolution": "node16",
-		"noEmit": true,
+		"outDir": "dist",
 		"noEmitOnError": true
 	},
 	"include": ["src"],
