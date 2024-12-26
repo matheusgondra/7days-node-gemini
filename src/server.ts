@@ -1,12 +1,12 @@
 import express from "express";
+import { env } from "./config/env";
 
-const PORT = process.env.PORT || 3333;
 const app = express();
 
 app.get("/", (req, res) => {
 	res.end("Hello World");
 });
 
-app.listen(PORT, () => {
-	console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(env.port, () => {
+	console.log(`Server is running on http://localhost:${env.port}`);
 });
