@@ -1,12 +1,12 @@
+import { Prompt } from "../domain";
 import { BadRequestResponse, CreatedResponse, ServerErrorResponse } from "../helpers/responses";
 import { Controller, Validation } from "../interfaces";
 import { HttpRequest, HttpResponse } from "../interfaces/http";
-import { GeminiService } from "../services";
 
 export class ChatController implements Controller {
 	constructor(
 		private readonly validation: Validation,
-		private readonly service: GeminiService
+		private readonly service: Prompt
 	) {}
 
 	async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
