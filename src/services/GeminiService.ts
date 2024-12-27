@@ -1,7 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { env } from "../config/env";
+import { Prompt } from "../domain";
 
-export class GeminiService {
+export class GeminiService implements Prompt {
 	private readonly model;
 	private readonly genAI;
 
