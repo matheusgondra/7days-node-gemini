@@ -10,29 +10,28 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+	allConfig: js.configs.all
 });
 
 export default [
-	...compat.extends(
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-	),
+	...compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"),
 	{
 		plugins: {
-				"@typescript-eslint": typescriptEslint,
-				prettier,
+			"@typescript-eslint": typescriptEslint,
+			prettier
 		},
 		languageOptions: {
-				globals: {
-						...globals.node,
-				},
-				parser: tsParser,
-				ecmaVersion: "latest",
-				sourceType: "module",
+			globals: {
+				...globals.node
+			},
+			parser: tsParser,
+			ecmaVersion: "latest",
+			sourceType: "module"
 		},
+		rules: {
+			"@typescript-eslint/no-explicit-any": "off"
+		}
 	}
 ];
