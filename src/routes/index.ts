@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { makeChatController } from "../factories/chat-controller-factory";
-import { adaptRoute } from "../helpers/adapters";
+import { chatRoutes } from "./chat-routes";
+import { templateRoutes } from "./template-routes";
 
 const router = Router();
 
-router.post("/chat", adaptRoute(makeChatController()));
+chatRoutes(router);
+templateRoutes(router);
 
 export { router };

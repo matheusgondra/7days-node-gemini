@@ -1,7 +1,7 @@
-import { ChatController } from "../controllers/ChatController";
-import { Controller } from "../interfaces/controller";
-import { GeminiService } from "../services/GeminiService";
-import { ChatValidator } from "../validators/ChatValidator";
+import { ChatController } from "../controllers";
+import { Controller } from "../interfaces";
+import { GeminiService } from "../services";
+import { ChatValidator } from "../validators";
 
 export const makeChatController = (): Controller => {
 	const validation = new ChatValidator();
